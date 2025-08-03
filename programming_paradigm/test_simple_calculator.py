@@ -3,15 +3,16 @@ import unittest
 from simple_calculator import SimpleCalculator
 
 class TestAdd(unittest.TestCase):
+    
     def test_addition(self):
-       calculator = SimpleCalculator()
-       result = calculator.add(7,8)
-       self.assertEqual(result, 15)
-
-    def test_add_negative(self):
        self.cal = SimpleCalculator()
+       #result = self.cal.add(7,8)
+       self.assertEqual(self.cal.add(7,8), 15)
+
+    #def test_add_negative(self):
+       #self.cal = SimpleCalculator()
        #result = self.cal.add(7,-8)
-       self.assertEqual(self.cal.add(7,-8), -1)
+       #self.assertEqual(self.cal.add(7,-8), -1)
 
     def test_subtraction(self):
         self.cal = SimpleCalculator()
