@@ -10,8 +10,8 @@ class TestAdd(unittest.TestCase):
 
     def test_add_negative(self):
        self.cal = SimpleCalculator()
-       result = self.cal.add(7,-8)
-       self.assertEqual(result, -1)
+       #result = self.cal.add(7,-8)
+       self.assertEqual(self.cal.add(7,-8), -1)
 
     def test_subtraction(self):
         self.cal = SimpleCalculator()
