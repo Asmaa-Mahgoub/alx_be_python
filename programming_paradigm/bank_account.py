@@ -6,22 +6,25 @@ class BankAccount:
 
     def deposit(self, amount):
         self.account_balance += amount
-        print(f"Deposited: ${self.account_balance}")
+        print(f"Deposited: ${amount}")
 
     def withdraw(self, amount):
         if self.account_balance >= amount:
             self.account_balance -= amount
+            print(f"Withdraw: ${amount}")
             return True
-            print(f"Withdraw: ${self.account_balance}")
+            
         else:
             print("Insufficient funds")
+            return False
 
     def display_balance(self):
         print(f"Current Balance: ${self.account_balance}")
 
-CIB= BankAccount(95000)
-CIB.deposit(8000)
-CIB.withdraw(60000)
+CIB= BankAccount(43000)
+#CIB.deposit(103000)
+#CIB.withdraw(50)
+CIB.withdraw(100000) 
 CIB.display_balance()
 
 
