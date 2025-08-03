@@ -2,25 +2,26 @@ import unittest
 
 from simple_calculator import SimpleCalculator
 
-class TestAdd(unittest.TestCase):
+class TestSimpleCalculator(unittest.TestCase):
+
+    def setUp(self):
+        """Set up the SimpleCalculator instance before each test."""
+        self.calc = SimpleCalculator()
     
     def test_addition(self):
-       self.cal = SimpleCalculator()
-       self.assertEqual(self.cal.add(7,8), 15)
-       self.assertEqual(self.cal.add(7,-8), -1)
+       self.assertEqual(self.calc.add(7,8), 15)
+       self.assertEqual(self.calc.add(7,-8), -1)
 
     def test_subtraction(self):
-        self.cal = SimpleCalculator()
-        self.assertEqual(self.cal.subtract(-9,20),-29)
+        self.assertEqual(self.calc.subtract(-9,20),-29)
 
     def test_multiplication(self):
-        self.cal = SimpleCalculator() 
-        self.assertEqual(self.cal.multiply(9,9), 81)
+        self.assertEqual(self.calc.multiply(9,9), 81)
 
     def test_division(self):
-       self.cal = SimpleCalculator()
+       self.assertEqual(self.calc.divide(9, 3), 3)
        with self.assertRaises(ZeroDivisionError):
-           self.cal.divide(2,0)
+           self.calc.divide(2,0)
        
 
 if __name__=="__main__":
